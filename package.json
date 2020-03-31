@@ -7,6 +7,9 @@
     "dist",
     "src"
   ],
+  "repository": {
+    "url": "https://github.com/lnmunhoz/i18n-codegen"
+  },
   "bin": {
     "i18n-codegen": "./dist/index.js"
   },

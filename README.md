@@ -5,6 +5,12 @@ Keep in mind this project is experimental, It assumes that you have a very speci
 
 ## Setup
 
+### Install
+
+```
+yarn add -D i18n-codegen
+```
+
 ### Create a config file `i18nrc.js` in the root of the project.
 
 ```js
