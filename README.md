@@ -1,4 +1,4 @@
-# i18n-code-generator
+# i18n-codegen
 
 This is a CLI that helps to make type safe translations in your typescript projects.
 Keep in mind this project is experimental, It assumes that you have a very specific structure for your translations.
