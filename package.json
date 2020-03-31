@@ -39,6 +39,7 @@
     "@types/app-root-path": "^1.2.4",
     "@types/fs-extra": "^8.1.0",
     "@types/jest": "^25.1.4",
+    "@types/sade": "^1.6.0",
     "husky": "^4.2.3",
     "release-it": "^13.5.0",
     "rimraf": "^3.0.2",
