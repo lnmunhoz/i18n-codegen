@@ -23,18 +23,24 @@ export type I18nKey = typeof I18nKeys[number];
 `;
 };
 
-export const runCodegen = async (config: I18nCodegenConfig) => {
-  const translationsFilePath = path.join(
-    rootProjectDir,
-    config.translationsFilePath
-  );
-  const outputCodePath = path.join(rootProjectDir, config.outputFilePath);
-  const translations = require(translationsFilePath) as TranslationsDict;
-  const code = generateCode(translations);
-
+export const runCodegen = (config: I18nCodegenConfig) => {
   return new Promise(async (resolve, reject) => {
+    // Get absolute paths
+    const translationsFilePath = path.join(
+      rootProjectDir,
+      config.translationsFilePath
+    );
+    const outputCodePath = path.join(rootProjectDir, config.outputFilePath);
+
     // Ensure file and folders exists
     await fe.ensureFile(outputCodePath);
+
+    // Clean cache
+    delete require.cache[translationsFilePath]; // Deleting loaded module
+
+    // Codegen
+    const translations = require(translationsFilePath) as TranslationsDict;
+    const code = generateCode(translations);
 
     fs.writeFile(
       outputCodePath,

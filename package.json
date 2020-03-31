@@ -19,7 +19,7 @@
     "test": "jest",
     "lint": "tsdx lint",
     "prebuild": "rimraf dist",
-    "codegen": "i18n-codegen codegen"
+    "codegen": "i18n-codegen generate"
   },
   "peerDependencies": {},
   "husky": {
