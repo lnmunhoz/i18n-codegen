@@ -1,0 +1,13 @@
+{
+  "home": {
+    "title": "Title",
+    "subtitle": "Subtitle"
+  },
+  "info": {
+    "title": "More info",
+    "features": {
+      "first": "First Feature",
+      "second": "Second Feature"
+    }
+  }
+}
