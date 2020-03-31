@@ -74,6 +74,7 @@ export const MyComponent = () => {
 - [ ] Init command
 - [ ] Validation of config file
 - [ ] Generate react hook automatically
+- [ ] Setup releases
 
 ## Local Development
 
