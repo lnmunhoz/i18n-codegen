@@ -7,20 +7,24 @@
     "dist",
     "src"
   ],
+  "bin": {
+    "i18n-codegen": "./dist/index.js"
+  },
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
+    "start": "tsc --watch",
+    "build": "tsc",
     "test": "jest",
     "lint": "tsdx lint",
-    "prepare": "tsdx build"
+    "prebuild": "rimraf dist",
+    "codegen": "i18n-codegen codegen"
   },
   "peerDependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "tsdx lint --fix"
     }
   },
   "prettier": {
@@ -36,6 +40,7 @@
     "@types/app-root-path": "^1.2.4",
     "@types/fs-extra": "^8.1.0",
     "@types/jest": "^25.1.4",
+    "@types/sade": "^1.6.0",
     "chokidar": "^3.3.1",
     "husky": "^4.2.3",
     "ora": "^4.0.3",
