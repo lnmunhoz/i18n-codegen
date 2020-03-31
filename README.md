@@ -11,6 +11,21 @@ Keep in mind this project is experimental, It assumes that you have a very speci
 yarn add -D i18n-codegen
 ```
 
+### Assumptions
+
+In this early stage, this package assume you have your translations in a JSON file using nested format.
+
+#### Example `en_US.json`
+
+```json
+{
+  "home": {
+    "title": "Title",
+    "subtitle": "Subtitle"
+  }
+}
+```
+
 ### Create a config file `i18nrc.js` in the root of the project.
 
 ```js
