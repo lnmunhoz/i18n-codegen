@@ -79,8 +79,6 @@ export const MyComponent = () => {
 
 This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
 
-## Local Development
-
 Below is a list of commands you will probably find useful.
 
 ### `npm start` or `yarn start`
