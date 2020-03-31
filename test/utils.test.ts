@@ -1,6 +1,6 @@
 import { flattenObject } from '../src/util/parse-translations';
 
-describe('blah', () => {
+describe('Util Tests', () => {
   it('flattens object with dot separator', () => {
     const t = {
       home: {
