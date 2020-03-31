@@ -1,4 +1,81 @@
-# TSDX Bootstrap
+# i18n-code-generator
+
+This is a CLI that helps to make type safe translations in your typescript projects.
+Keep in mind this project is experimental, It assumes that you have a very specific strucute for your translations.
+
+## Setup
+
+### Create a config file `i18nrc.js` in the root of the project.
+
+```js
+module.exports = {
+  // Your main translation file
+  translationsFilePath: './src/locales/en_US.json',
+  // Output of the generated types
+  outputFilePath: './src/generated/i18n-types.ts',
+};
+```
+
+### Add a script to your package.json
+
+The `--watch` mode is optional
+
+```json
+{
+  "scripts": {
+    "i18n": "i18n-codegen generate --watch"
+  }
+}
+```
+
+### Usage with `react-i18next`
+
+Create a wrapper on top of `useTranslation` hook.
+
+```ts
+import {
+  UseTranslationOptions,
+  useTranslation as __useTranslation,
+} from 'react-i18next';
+import { I18nKey } from './generated/i18n-types';
+
+export function useTranslation() {
+  const { t: __t, i18n } = __useTranslation();
+  const t = (key: I18nKey, options?: UseTranslationOptions) =>
+    __t(key, options);
+
+  return { t, i18n };
+}
+```
+
+### Done!
+
+Now you can enjoy type safety in your translation keys!
+
+```tsx
+import React from 'react';
+import { View, Text } from 'react-native';
+import { useTranslation } from "./i18n/useTranslation";
+
+export const MyComponent = () => {
+  const { t } = useTranslation()
+
+  return (
+    <View>
+      <Text>{t('home.title')}</Title>
+    </View>
+  )
+}
+```
+
+## Roadmap
+
+- [ ] Lint file after generate with prettier settings
+- [ ] Init command
+- [ ] Validation of config file
+- [ ] Generate react hook automatically
+
+## Local Development
 
 This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
 
