@@ -36,7 +36,10 @@
       "release": true
     },
     "hooks": {
-      "before:init": "npm test"
+      "before:init": "yarn lint && yarn build && npm test"
+    },
+    "npm": {
+      "publish": false
     }
   },
   "prettier": {
