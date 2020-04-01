@@ -91,11 +91,11 @@ export const MyComponent = () => {
 
 ## Roadmap
 
+- ✅ Setup releases
 - [ ] Lint file after generate with prettier settings
 - [ ] Init command
 - [ ] Validation of config file
 - [ ] Generate react hook automatically
-- [ ] Setup releases
 
 ## Local Development
 
