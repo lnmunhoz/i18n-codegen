@@ -15,15 +15,36 @@ yarn add -D i18n-codegen
 
 In this early stage, this package assume you have your translations in a JSON file using nested format.
 
-#### Example `en_US.json`
+#### Example input `en_US.json`:
 
 ```json
 {
   "home": {
     "title": "Title",
     "subtitle": "Subtitle"
+  },
+  "info": {
+    "title": "More info",
+    "features": {
+      "first": "First Feature",
+      "second": "Second Feature"
+    }
   }
 }
+```
+
+#### Generates:
+
+```ts
+export const I18nKeys = [
+  'home.title',
+  'home.subtitle',
+  'info.title',
+  'info.features.first',
+  'info.features.second',
+] as const;
+
+export type I18nKey = typeof I18nKeys[number];
 ```
 
 ### Create a config file `i18nrc.js` in the root of the project.
