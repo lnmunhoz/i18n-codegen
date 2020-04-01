@@ -13,9 +13,6 @@
   "bin": {
     "i18n-codegen": "./dist/index.js"
   },
-  "engines": {
-    "node": ">=10"
-  },
   "scripts": {
     "start": "tsc --watch",
     "build": "tsc",
@@ -28,6 +25,17 @@
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint --fix"
+    }
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "hooks": {
+      "before:init": "npm test"
     }
   },
   "prettier": {
@@ -44,7 +52,7 @@
     "@types/jest": "^25.1.4",
     "@types/sade": "^1.6.0",
     "husky": "^4.2.3",
-    "release-it": "^13.5.0",
+    "release-it": "^13.5.1",
     "rimraf": "^3.0.2",
     "tsdx": "^0.13.1",
     "tslib": "^1.11.1",
