@@ -18,6 +18,7 @@ export const loadConfigFile = (): I18nCodegenConfig => {
   const configPath = getConfigFilePath();
 
   try {
+    delete require.cache[configPath];
     const config = require(configPath);
 
     if (!config) {
